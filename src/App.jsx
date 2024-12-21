@@ -12,7 +12,7 @@ const WeatherApp = () => {
     return (
         <>
         <MyProvider>
-            <BrowserRouter basename="/WeatherApp/">
+            <BrowserRouter basename="/weather_app2/">
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route path="" element={<SearchWeather />} >
