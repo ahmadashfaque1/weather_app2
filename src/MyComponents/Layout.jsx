@@ -26,7 +26,7 @@ const Layout = () => {
                 <div className="main-header-search-buttons">
 
                     <button onClick={() => handleLinkClick("your-weather")} className={activeLink === 'your-weather' ? "main-header-search-buttons--active" : "main-header-search-buttons-left"}>Your Weather</button>
-                    <button onClick={() => handleLinkClick("/")} className={activeLink === '/' ? "main-header-search-buttons--active" : "main-header-search-buttons-right"}>Search Weather</button>
+                    <button onClick={() => handleLinkClick("")} className={activeLink === '' ? "main-header-search-buttons--active" : "main-header-search-buttons-right"}>Search Weather</button>
 
                 </div>
             </div>
