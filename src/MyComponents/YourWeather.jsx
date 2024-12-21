@@ -4,7 +4,7 @@ import "./YourWeather.css";
 import { useContext } from "react";
 import MyContext from '../MyContext';
 import { useNavigate } from "react-router-dom";
-import image from "../assets/location.png"
+
 
 const YourWeather = () => {
    const navigate = useNavigate();
@@ -99,7 +99,7 @@ const YourWeather = () => {
 
   return (
     <div className="your-Weather">
-      <img src={image} width={"80px"} height={"80px"} alt="Location Image" />
+      <img src="/assets/location.png" width={"80px"} height={"80px"} alt="Location Image" />
       <p className="p1-your-weather">Grant Location Access</p>
       <p className="p2-your-weather">Allow Access to get weather Information</p>
       <button className="btn-grand-access" onClick={getLocation}>
