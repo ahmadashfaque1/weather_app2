@@ -11,4 +11,3 @@ export default defineConfig({
   ],
   base: '/weather_app2/', // Set the base path if you're deploying to a subpath
 });
- 
