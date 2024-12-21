@@ -1,0 +1,44 @@
+.weather-container {
+    display: flex;
+    font-weight: bold;
+    color: white;
+    justify-content: space-between;
+    margin-top: 10%;
+}
+
+.input-box {
+    width: 85%;
+    height: 45px;
+    background-color: rgba(219, 226, 239, 0.5);
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 12px;
+    border: none;
+}
+
+.input-box::placeholder {
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    font-family: serif;
+}
+
+.get-weather-btn {
+    background-color: #3f72af;
+    color: white;
+    font-weight: bold;
+    align-items: center;
+    cursor: pointer;
+    white-space: nowrap;
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+}
+
+.result-container {
+    margin-top: 40px;
+    font-weight: bold;
+    color:white;
+   
+}
