@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import "./SeeResult.css"
 import MyContext from "../MyContext";
-
+import wind from "../assets/wind.png"
+import humidity from "../assets/humidity.png"
+import cloud from "../assets/cloud.png"
 
 
 const SeeResult = () => {
@@ -23,21 +25,21 @@ const SeeResult = () => {
                 <div className="parameter-container">
 
                     <div className="parameter">
-                        <img src="src/assets/wind.png" alt="Wind icon" />
+                        <img src={wind} alt="Wind icon" />
                         <p>windspeed%</p>
                         <p data-windspeed="">{weatherData.wind.speed}</p>
                     </div>
 
 
                     <div className="parameter">
-                        <img src="src/assets/humidity.png" alt="Humidity icon" />
+                        <img src={humidity} alt="Humidity icon" />
                         <p>humidity</p>
                         <p data-humidity="">{weatherData.wind.deg}%</p>
                     </div>
 
 
                     <div className="parameter">
-                        <img src="src\assets\cloud.png" alt="Cloud icon" />
+                        <img src={cloud} alt="Cloud icon" />
                         <p>Clouds</p>
                         <p data-cloudiness="">{weatherData.clouds.all}%</p>
                     </div>
