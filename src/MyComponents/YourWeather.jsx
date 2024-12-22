@@ -8,14 +8,11 @@ import image from "../assets/location.png"
 
 const YourWeather = () => {
   const navigate = useNavigate();
-  const navigate = useNavigate();
   const [location, setLocation] = useState(null);
   const [message, setMessage] = useState("Waiting for location...");
   const [loading, setLoading] = useState(false);
   const { weatherData, setWeatherData } = useContext(MyContext);
 
-
-  function getCityName(address) {
 
   function getCityName(address) {
     // Split the address by commas
@@ -70,29 +67,11 @@ const YourWeather = () => {
         try {
           let cityName = getCityName(address)
           const apiKey = 'd983b91192b33f7a6ac5fd03615214ec';
-          try {
-            const response = await axios.get(
-              `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`
-            );
-            if (response.data) {
-              console.log(response.data, "***++++++++")
-              setWeatherData(response.data);
-              navigate("/see-result");
-            }
-          } catch (err) {
-            const response = await axios.get(
-              `https://api.openweathermap.org/data/2.5/weather?q=saharanpur&appid=${apiKey}&units=metric`
-            );
-            if (response.data) {
-              console.log(response.data, "***++++++++")
-              setWeatherData(response.data);
-              navigate("/see-result");
-            }
           console.log(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`, "@#$%");
           try {
             const response = await axios.get(
 
-              `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`
+              `https://api.openweathermap.org/data/2.5/weather?q=ssdsda&appid=${apiKey}&units=metric`
             );
             if (response.data) {
               console.log(response.data, "***++++++++")
@@ -154,7 +133,6 @@ const YourWeather = () => {
       {loading && <p>Loading address...</p>}
     </div>
   );
-}
 };
 
 export default YourWeather;
