@@ -8,11 +8,14 @@ import image from "../assets/location.png"
 
 const YourWeather = () => {
   const navigate = useNavigate();
+  const navigate = useNavigate();
   const [location, setLocation] = useState(null);
   const [message, setMessage] = useState("Waiting for location...");
   const [loading, setLoading] = useState(false);
   const { weatherData, setWeatherData } = useContext(MyContext);
 
+
+  function getCityName(address) {
 
   function getCityName(address) {
     // Split the address by commas
@@ -54,13 +57,13 @@ const YourWeather = () => {
   const getAddressFromCoordinates = async (latitude, longitude) => {
     setLoading(true);
     try {
-      console.log(latitude, longitude, "***");
+      console.log(latitude.toString().slice(0, 7), longitude.toString().slice(0, 7), "***");
       // Make the API call to get the address from latitude and longitude
       const response = await axios.get(
-        `https://geocode.maps.co/reverse?lat=${latitude}&lon=${longitude}&format=json`
+        `https://geocode.maps.co/reverse?lat=${latitude.toString().slice(0, 7)}&lon=${longitude.toString().slice(0, 7)}&format=json`
       );
       if (response.data) {
-        console.log(response.data);
+        console.log(response.data, "*&%^%");
 
         const address = response.data.display_name;  // You can adjust this to show the desired part of the address
         setMessage(`Address: ${address}`);
@@ -85,7 +88,30 @@ const YourWeather = () => {
               setWeatherData(response.data);
               navigate("/see-result");
             }
+          console.log(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`, "@#$%");
+          try {
+            const response = await axios.get(
+
+              `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`
+            );
+            if (response.data) {
+              console.log(response.data, "***++++++++")
+              setWeatherData(response.data);
+              navigate("/see-result");
+            }
           }
+          catch (abc) {
+            const response = await axios.get(
+
+              `https://api.openweathermap.org/data/2.5/weather?q=Maharajganj&appid=${apiKey}&units=metric`
+            );
+            if (response.data) {
+              console.log(response.data, "***++++++++")
+              setWeatherData(response.data);
+              navigate("/see-result");
+            }
+          }
+
         } catch (err) {
           console.error(err);
           if (err.response && err.response.status === 404) {
@@ -128,6 +154,7 @@ const YourWeather = () => {
       {loading && <p>Loading address...</p>}
     </div>
   );
+}
 };
 
 export default YourWeather;
