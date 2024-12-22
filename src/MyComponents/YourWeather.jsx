@@ -71,7 +71,7 @@ const YourWeather = () => {
           try {
             const response = await axios.get(
 
-              `https://api.openweathermap.org/data/2.5/weather?q=ssdsda&appid=${apiKey}&units=metric`
+              `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`
             );
             if (response.data) {
               console.log(response.data, "***++++++++")
